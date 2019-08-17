@@ -71,7 +71,7 @@ public class SquareTest {
     }
 
     private Square givenSquare(int row, int col, SquareType type) {
-        return Square.newBuilder().withCoordinate(new Location(row, col, null)).withType(type).withVisited(false).build();
+        return Square.newBuilder().withLocation(new Location(row, col, null)).withType(type).withVisited(false).build();
     }
 
     private Square mark(Square unvisited) {

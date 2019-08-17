@@ -20,7 +20,7 @@ public class MazeBuilderImpl implements MazeBuilder {
                 char label = input[row][col];
                 Location location = new Location(row, col);
                 Square square = Square.newBuilder()
-                        .withCoordinate(location)
+                        .withLocation(location)
                         .withType(fromLabel(label))
                         .build();
                 squares.put(location, square);

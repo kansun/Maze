@@ -77,7 +77,7 @@ public final class Square {
         private Builder() {
         }
 
-        public Builder withCoordinate(Location val) {
+        public Builder withLocation(Location val) {
             location = val;
             return this;
         }

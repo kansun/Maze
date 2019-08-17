@@ -19,7 +19,7 @@ public class MazeSolverImplTest {
 
     @Before
     public void setUp() {
-        target = new MazeSolverImpl();
+        target = new MazeSolverImpl(new SolutionizerImpl(), new SolutionApplierImpl());
     }
 
     @Test

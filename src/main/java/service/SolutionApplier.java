@@ -7,5 +7,5 @@ import java.util.Collection;
 
 public interface SolutionApplier {
 
-    Maze apply(Maze source, Collection<Location> solution);
+    Maze apply(Maze target, Collection<Location> solution);
 }

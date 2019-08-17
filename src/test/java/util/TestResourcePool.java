@@ -43,20 +43,20 @@ public enum TestResourcePool {
     private static Maze createSingleRowMaze_0() {
         Set<Square> squares = new HashSet<>(Arrays.asList(
                 //top wall
-                Square.newBuilder().withCoordinate(new Location(0, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 3, null)).withType(WALL).build(),
                 //the row
-                Square.newBuilder().withCoordinate(new Location(1, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 1, null)).withType(START).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 2, null)).withType(END).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 1, null)).withType(START).build(),
+                Square.newBuilder().withLocation(new Location(1, 2, null)).withType(END).build(),
+                Square.newBuilder().withLocation(new Location(1, 3, null)).withType(WALL).build(),
                 //bottom1 wall
-                Square.newBuilder().withCoordinate(new Location(2, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 3, null)).withType(WALL).build()
+                Square.newBuilder().withLocation(new Location(2, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 3, null)).withType(WALL).build()
         ));
 
         Map<Location, Square> map = squares.stream().collect(toMap(s -> s.getLocation(), s -> s));
@@ -66,20 +66,20 @@ public enum TestResourcePool {
     private static Maze createSolvedSingleRowMaze_0() {
         Set<Square> squares = new HashSet<>(Arrays.asList(
                 //top wall
-                Square.newBuilder().withCoordinate(new Location(0, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 3, null)).withType(WALL).build(),
                 //the row
-                Square.newBuilder().withCoordinate(new Location(1, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 1, null)).withType(START).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 2, null)).withType(END).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 1, null)).withType(START).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 2, null)).withType(END).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 3, null)).withType(WALL).build(),
                 //bottom1 wall
-                Square.newBuilder().withCoordinate(new Location(2, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 3, null)).withType(WALL).build()
+                Square.newBuilder().withLocation(new Location(2, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 3, null)).withType(WALL).build()
         ));
 
         Map<Location, Square> map = squares.stream().collect(toMap(s -> s.getLocation(), s -> s));
@@ -89,23 +89,23 @@ public enum TestResourcePool {
     private static Maze createSingleRowMaze_1() {
         Set<Square> squares = new HashSet<>(Arrays.asList(
                 //top wall
-                Square.newBuilder().withCoordinate(new Location(0, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 4, null)).withType(WALL).build(),
                 //the row
-                Square.newBuilder().withCoordinate(new Location(1, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 1, null)).withType(START).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 2, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 3, null)).withType(END).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 1, null)).withType(START).build(),
+                Square.newBuilder().withLocation(new Location(1, 2, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 3, null)).withType(END).build(),
+                Square.newBuilder().withLocation(new Location(1, 4, null)).withType(WALL).build(),
                 //bottom1 wall
-                Square.newBuilder().withCoordinate(new Location(2, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 4, null)).withType(WALL).build()
+                Square.newBuilder().withLocation(new Location(2, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 4, null)).withType(WALL).build()
         ));
 
         Map<Location, Square> map = squares.stream().collect(toMap(s -> s.getLocation(), s -> s));
@@ -115,23 +115,23 @@ public enum TestResourcePool {
     private static Maze createSolvedSingleRowMaze_1() {
         Set<Square> squares = new HashSet<>(Arrays.asList(
                 //top wall
-                Square.newBuilder().withCoordinate(new Location(0, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 4, null)).withType(WALL).build(),
                 //the row
-                Square.newBuilder().withCoordinate(new Location(1, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 1, null)).withType(START).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 2, null)).withType(MARKED).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 3, null)).withType(END).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 1, null)).withType(START).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 2, null)).withType(MARKED).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 3, null)).withType(END).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 4, null)).withType(WALL).build(),
                 //bottom1 wall
-                Square.newBuilder().withCoordinate(new Location(2, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 4, null)).withType(WALL).build()
+                Square.newBuilder().withLocation(new Location(2, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 4, null)).withType(WALL).build()
         ));
 
         Map<Location, Square> map = squares.stream().collect(toMap(s -> s.getLocation(), s -> s));
@@ -141,26 +141,26 @@ public enum TestResourcePool {
     private static Maze createSingleRowMaze_2() {
         Set<Square> squares = new HashSet<>(Arrays.asList(
                 //top wall
-                Square.newBuilder().withCoordinate(new Location(0, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 5, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 5, null)).withType(WALL).build(),
                 //the row
-                Square.newBuilder().withCoordinate(new Location(1, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 1, null)).withType(START).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 2, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 3, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 4, null)).withType(END).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 5, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 1, null)).withType(START).build(),
+                Square.newBuilder().withLocation(new Location(1, 2, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 3, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 4, null)).withType(END).build(),
+                Square.newBuilder().withLocation(new Location(1, 5, null)).withType(WALL).build(),
                 //bottom1 wall
-                Square.newBuilder().withCoordinate(new Location(2, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 5, null)).withType(WALL).build()
+                Square.newBuilder().withLocation(new Location(2, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 5, null)).withType(WALL).build()
         ));
 
         Map<Location, Square> map = squares.stream().collect(toMap(s -> s.getLocation(), s -> s));
@@ -170,26 +170,26 @@ public enum TestResourcePool {
     private static Maze createSolvedSingleRowMaze_2() {
         Set<Square> squares = new HashSet<>(Arrays.asList(
                 //top wall
-                Square.newBuilder().withCoordinate(new Location(0, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 5, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 5, null)).withType(WALL).build(),
                 //the row
-                Square.newBuilder().withCoordinate(new Location(1, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 1, null)).withType(START).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 2, null)).withType(MARKED).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 3, null)).withType(MARKED).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 4, null)).withType(END).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 5, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 1, null)).withType(START).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 2, null)).withType(MARKED).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 3, null)).withType(MARKED).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 4, null)).withType(END).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 5, null)).withType(WALL).build(),
                 //bottom1 wall
-                Square.newBuilder().withCoordinate(new Location(2, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 5, null)).withType(WALL).build()
+                Square.newBuilder().withLocation(new Location(2, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 5, null)).withType(WALL).build()
         ));
         Map<Location, Square> map = squares.stream().collect(toMap(s -> s.getLocation(), s -> s));
         return new Maze(map);
@@ -198,25 +198,25 @@ public enum TestResourcePool {
     private static Maze createDiagonalMaze_1() {
         Set<Square> squares = new HashSet<>(Arrays.asList(
 
-                Square.newBuilder().withCoordinate(new Location(0, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 3, null)).withType(WALL).build(),
 
-                Square.newBuilder().withCoordinate(new Location(1, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 1, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 2, null)).withType(END).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 1, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 2, null)).withType(END).build(),
+                Square.newBuilder().withLocation(new Location(1, 3, null)).withType(WALL).build(),
 
-                Square.newBuilder().withCoordinate(new Location(2, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 1, null)).withType(START).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 1, null)).withType(START).build(),
+                Square.newBuilder().withLocation(new Location(2, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 3, null)).withType(WALL).build(),
 
-                Square.newBuilder().withCoordinate(new Location(3, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 3, null)).withType(WALL).build()
+                Square.newBuilder().withLocation(new Location(3, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 3, null)).withType(WALL).build()
         ));
 
         Map<Location, Square> map = squares.stream().collect(toMap(s -> s.getLocation(), s -> s));
@@ -226,25 +226,25 @@ public enum TestResourcePool {
     private static Maze createSolvedDiagonalMaze_1() {
         Set<Square> squares = new HashSet<>(Arrays.asList(
 
-                Square.newBuilder().withCoordinate(new Location(0, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 3, null)).withType(WALL).build(),
 
-                Square.newBuilder().withCoordinate(new Location(1, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 1, null)).withType(MARKED).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 2, null)).withType(END).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 1, null)).withType(MARKED).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 2, null)).withType(END).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(1, 3, null)).withType(WALL).build(),
 
-                Square.newBuilder().withCoordinate(new Location(2, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 1, null)).withType(START).withVisited(true).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 1, null)).withType(START).withVisited(true).build(),
+                Square.newBuilder().withLocation(new Location(2, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 3, null)).withType(WALL).build(),
 
-                Square.newBuilder().withCoordinate(new Location(3, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 3, null)).withType(WALL).build()
+                Square.newBuilder().withLocation(new Location(3, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 3, null)).withType(WALL).build()
         ));
 
         Map<Location, Square> map = squares.stream().collect(toMap(s -> s.getLocation(), s -> s));
@@ -253,65 +253,65 @@ public enum TestResourcePool {
 
     static Maze createComplexMaze() {
         Set<Square> squares = new HashSet<>(Arrays.asList(
-                Square.newBuilder().withCoordinate(new Location(0, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 5, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 6, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 5, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 6, null)).withType(WALL).build(),
 
-                Square.newBuilder().withCoordinate(new Location(1, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 1, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 2, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 3, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 4, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 5, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 6, null)).withType(WALL).build(),
-
-
-                Square.newBuilder().withCoordinate(new Location(2, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 1, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 3, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 5, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 6, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 1, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 2, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 3, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 4, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 5, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 6, null)).withType(WALL).build(),
 
 
-                Square.newBuilder().withCoordinate(new Location(3, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 1, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 3, null)).withType(END).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 5, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 6, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 1, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(2, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 3, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(2, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 5, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(2, 6, null)).withType(WALL).build(),
 
 
-                Square.newBuilder().withCoordinate(new Location(4, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 1, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 5, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 6, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 1, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(3, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 3, null)).withType(END).build(),
+                Square.newBuilder().withLocation(new Location(3, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 5, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(3, 6, null)).withType(WALL).build(),
 
 
-                Square.newBuilder().withCoordinate(new Location(5, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 1, null)).withType(START).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 2, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 3, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 5, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 6, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(4, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(4, 1, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(4, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(4, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(4, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(4, 5, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(4, 6, null)).withType(WALL).build(),
 
-                Square.newBuilder().withCoordinate(new Location(6, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 5, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 6, null)).withType(WALL).build()
+
+                Square.newBuilder().withLocation(new Location(5, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(5, 1, null)).withType(START).build(),
+                Square.newBuilder().withLocation(new Location(5, 2, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(5, 3, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(5, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(5, 5, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(5, 6, null)).withType(WALL).build(),
+
+                Square.newBuilder().withLocation(new Location(6, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 5, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 6, null)).withType(WALL).build()
         ));
         Map<Location, Square> map = squares.stream().collect(toMap(s -> s.getLocation(), s -> s));
         return new Maze(map);
@@ -327,65 +327,65 @@ public enum TestResourcePool {
     */
     static Maze createSolvedComplexMaze() {
         Set<Square> squares = new HashSet<>(Arrays.asList(
-                Square.newBuilder().withCoordinate(new Location(0, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 5, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(0, 6, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 5, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(0, 6, null)).withType(WALL).build(),
 
-                Square.newBuilder().withCoordinate(new Location(1, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 1, null)).withType(MARKED).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 2, null)).withType(MARKED).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 3, null)).withType(MARKED).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 4, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 5, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(1, 6, null)).withType(WALL).build(),
-
-
-                Square.newBuilder().withCoordinate(new Location(2, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 1, null)).withType(MARKED).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 3, null)).withType(MARKED).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 5, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(2, 6, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(1, 1, null)).withType(MARKED).build(),
+                Square.newBuilder().withLocation(new Location(1, 2, null)).withType(MARKED).build(),
+                Square.newBuilder().withLocation(new Location(1, 3, null)).withType(MARKED).build(),
+                Square.newBuilder().withLocation(new Location(1, 4, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 5, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(1, 6, null)).withType(WALL).build(),
 
 
-                Square.newBuilder().withCoordinate(new Location(3, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 1, null)).withType(MARKED).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 3, null)).withType(END).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 5, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(3, 6, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 1, null)).withType(MARKED).build(),
+                Square.newBuilder().withLocation(new Location(2, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 3, null)).withType(MARKED).build(),
+                Square.newBuilder().withLocation(new Location(2, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(2, 5, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(2, 6, null)).withType(WALL).build(),
 
 
-                Square.newBuilder().withCoordinate(new Location(4, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 1, null)).withType(MARKED).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 5, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(4, 6, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 1, null)).withType(MARKED).build(),
+                Square.newBuilder().withLocation(new Location(3, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 3, null)).withType(END).build(),
+                Square.newBuilder().withLocation(new Location(3, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(3, 5, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(3, 6, null)).withType(WALL).build(),
 
 
-                Square.newBuilder().withCoordinate(new Location(5, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 1, null)).withType(START).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 2, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 3, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 5, null)).withType(SPACE).build(),
-                Square.newBuilder().withCoordinate(new Location(5, 6, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(4, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(4, 1, null)).withType(MARKED).build(),
+                Square.newBuilder().withLocation(new Location(4, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(4, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(4, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(4, 5, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(4, 6, null)).withType(WALL).build(),
 
-                Square.newBuilder().withCoordinate(new Location(6, 0, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 1, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 2, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 3, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 4, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 5, null)).withType(WALL).build(),
-                Square.newBuilder().withCoordinate(new Location(6, 6, null)).withType(WALL).build()
+
+                Square.newBuilder().withLocation(new Location(5, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(5, 1, null)).withType(START).build(),
+                Square.newBuilder().withLocation(new Location(5, 2, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(5, 3, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(5, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(5, 5, null)).withType(SPACE).build(),
+                Square.newBuilder().withLocation(new Location(5, 6, null)).withType(WALL).build(),
+
+                Square.newBuilder().withLocation(new Location(6, 0, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 1, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 2, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 3, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 4, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 5, null)).withType(WALL).build(),
+                Square.newBuilder().withLocation(new Location(6, 6, null)).withType(WALL).build()
         ));
         Map<Location, Square> map = squares.stream().collect(toMap(s -> s.getLocation(), s -> s));
         return new Maze(map);

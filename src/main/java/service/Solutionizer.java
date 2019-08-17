@@ -5,7 +5,7 @@ import model.Maze;
 
 import java.util.Collection;
 
-public interface Solutinizer {
+public interface Solutionizer {
 
-    Collection<Location> getSolution(Maze input);
+    Collection<Location> solve(Maze input);
 }
