@@ -30,8 +30,8 @@ public class SquareTest {
         //then
         assertThat(marked.getType(), equalTo(MARKED));
         assertThat(marked.isVisited(), equalTo(false));
-        assertThat(marked.getRow(), equalTo(unmarked.getRow()));
-        assertThat(marked.getCol(), equalTo(unmarked.getCol()));
+        assertThat(marked.getLocation().getRow(), equalTo(unmarked.getLocation().getRow()));
+        assertThat(marked.getLocation().getCol(), equalTo(unmarked.getLocation().getCol()));
     }
 
     @Test
@@ -45,8 +45,8 @@ public class SquareTest {
         //then
         assertThat(visited.isVisited(), equalTo(true));
         assertThat(visited.getType(), equalTo(SPACE));
-        assertThat(visited.getRow(), equalTo(unvisited.getRow()));
-        assertThat(visited.getCol(), equalTo(unvisited.getCol()));
+        assertThat(visited.getLocation().getRow(), equalTo(unvisited.getLocation().getRow()));
+        assertThat(visited.getLocation().getCol(), equalTo(unvisited.getLocation().getCol()));
     }
 
     @Test
@@ -60,19 +60,18 @@ public class SquareTest {
         Square end = givenSquare(2, 2, END);
         Square duplicateEnd = givenSquare(2, 2, END);
         Collection<Square> withDuplidate = Arrays.asList(wall1, wall2, cell1, cell2, start, end, duplicateEnd);
-        Collection<Square> withoutDuplidate = Arrays.asList(wall1, wall2, cell1, cell2, start, end);
+        Collection<Square> withoutDuplicate = Arrays.asList(wall1, wall2, cell1, cell2, start, end);
 
         //when
         Set<Square> target = new HashSet<>(withDuplidate);
 
         //then
-        assertThat(target, hasSize(withoutDuplidate.size()));
-        assertThat(target, Matchers.containsInAnyOrder(withoutDuplidate.toArray()));
-
+        assertThat(target, hasSize(withoutDuplicate.size()));
+        assertThat(target, Matchers.containsInAnyOrder(withoutDuplicate.toArray()));
     }
 
     private Square givenSquare(int row, int col, SquareType type) {
-        return Square.newBuilder().withRow(row).withCol(col).withType(type).withVisited(false).build();
+        return Square.newBuilder().withCoordinate(new Location(row, col, null)).withType(type).withVisited(false).build();
     }
 
     private Square mark(Square unvisited) {

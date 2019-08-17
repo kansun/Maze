@@ -4,12 +4,11 @@ import model.Maze;
 import org.junit.Before;
 import org.junit.Test;
 import service.MazeBuilder;
-import util.TestUtils;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static util.TestUtils.*;
-import static util.TestUtils.createExpectedSingleRowMaze;
+import static util.TestResourcePool.COMPLEX_ROW_MAZE;
+import static util.TestResourcePool.SINGLE_ROW_MAZE_2;
 
 public class MazeBuilderImplTest {
 
@@ -39,7 +38,7 @@ public class MazeBuilderImplTest {
         Maze actual = target.build(input);
 
         //then
-        Maze expected = createExpectedSingleRowMaze();
+        Maze expected = SINGLE_ROW_MAZE_2.getUnresolved();
         assertThat(actual, equalTo(expected));
     }
 
@@ -70,7 +69,7 @@ public class MazeBuilderImplTest {
         Maze actual = target.build(input);
 
         //then
-        Maze expected = createExpectedMaze();
+        Maze expected = COMPLEX_ROW_MAZE.getUnresolved();
         assertThat(actual, equalTo(expected));
     }
 
