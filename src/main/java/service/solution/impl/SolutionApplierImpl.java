@@ -1,9 +1,9 @@
-package service.impl;
+package service.solution.impl;
 
 import model.Location;
 import model.Maze;
 import model.Square;
-import service.SolutionApplier;
+import service.solution.SolutionApplier;
 
 import java.util.Collection;
 import java.util.HashMap;

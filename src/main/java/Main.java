@@ -2,19 +2,19 @@ import context.ApplicationContext;
 import exception.ApplicationException;
 import model.Maze;
 import service.GlobalExceptionHandler;
-import service.MazeLoader;
-import service.MazeSolver;
-import service.MazeWriter;
+import service.build.MazeLoader;
+import service.io.MazeWriter;
+import service.solution.MazeSolver;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
-    static MazeLoader loader;
-    static MazeSolver solver;
-    static MazeWriter writer;
-    static GlobalExceptionHandler exceptionHandler;
+    private static MazeLoader loader;
+    private static MazeSolver solver;
+    private static MazeWriter writer;
+    private static GlobalExceptionHandler exceptionHandler;
 
     public static void main(String[] args) {
         initialize();

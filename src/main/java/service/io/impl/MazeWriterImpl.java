@@ -1,9 +1,9 @@
-package service.impl;
+package service.io.impl;
 
 import model.Location;
 import model.Maze;
 import model.Square;
-import service.MazeWriter;
+import service.io.MazeWriter;
 
 import java.util.Map;
 

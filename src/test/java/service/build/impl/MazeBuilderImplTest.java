@@ -1,9 +1,9 @@
-package service.impl;
+package service.build.impl;
 
 import model.Maze;
 import org.junit.Before;
 import org.junit.Test;
-import service.MazeBuilder;
+import service.build.MazeBuilder;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;

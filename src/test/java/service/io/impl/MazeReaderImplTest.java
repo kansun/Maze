@@ -1,4 +1,4 @@
-package service.impl;
+package service.io.impl;
 
 import exception.FileReaderException;
 import model.Location;
@@ -6,7 +6,7 @@ import model.Square;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import service.MazeReader;
+import service.io.MazeReader;
 import util.TestResourcePool;
 
 import java.io.IOException;

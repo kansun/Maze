@@ -1,10 +1,10 @@
-package service.impl;
+package service.solution.impl;
 
 import model.Direction;
 import model.Location;
 import model.Maze;
 import model.Square;
-import service.Solutionizer;
+import service.solution.Solutionizer;
 
 import java.util.Collection;
 import java.util.Collections;

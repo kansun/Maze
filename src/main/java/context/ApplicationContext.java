@@ -2,20 +2,20 @@ package context;
 
 import service.GlobalExceptionHandler;
 import service.InputValidator;
-import service.MazeBuilder;
-import service.MazeLoader;
-import service.MazeReader;
-import service.MazeSolver;
-import service.MazeWriter;
+import service.build.MazeBuilder;
+import service.build.MazeLoader;
+import service.build.impl.MazeBuilderImpl;
+import service.build.impl.MazeLoaderImpl;
 import service.impl.ExceptionHandlerImpl;
 import service.impl.InputValidatorImpl;
-import service.impl.MazeBuilderImpl;
-import service.impl.MazeLoaderImpl;
-import service.impl.MazeReaderImpl;
-import service.impl.MazeSolverImpl;
-import service.impl.MazeWriterImpl;
-import service.impl.SolutionApplierImpl;
-import service.impl.SolutionizerImpl;
+import service.io.MazeReader;
+import service.io.MazeWriter;
+import service.io.impl.MazeReaderImpl;
+import service.io.impl.MazeWriterImpl;
+import service.solution.MazeSolver;
+import service.solution.impl.MazeSolverImpl;
+import service.solution.impl.SolutionApplierImpl;
+import service.solution.impl.SolutionizerImpl;
 
 public final class ApplicationContext {
 

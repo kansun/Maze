@@ -1,8 +1,8 @@
-package service.impl;
+package service.io.impl;
 
 import exception.FileReaderException;
 import service.InputValidator;
-import service.MazeReader;
+import service.io.MazeReader;
 
 import java.io.IOException;
 import java.nio.file.Files;

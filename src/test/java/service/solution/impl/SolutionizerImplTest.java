@@ -1,11 +1,11 @@
-package service.impl;
+package service.solution.impl;
 
 import model.Location;
 import model.Maze;
 import model.Square;
 import org.junit.Before;
 import org.junit.Test;
-import service.Solutionizer;
+import service.solution.Solutionizer;
 
 import java.util.Collection;
 import java.util.HashSet;

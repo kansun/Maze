@@ -1,4 +1,4 @@
-package service;
+package service.solution;
 
 import model.Location;
 import model.Maze;

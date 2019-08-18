@@ -1,10 +1,10 @@
-package service.impl;
+package service.solution.impl;
 
 import model.Location;
 import model.Maze;
 import model.Square;
 import org.junit.Test;
-import service.SolutionApplier;
+import service.solution.SolutionApplier;
 
 import java.util.Arrays;
 import java.util.Collection;

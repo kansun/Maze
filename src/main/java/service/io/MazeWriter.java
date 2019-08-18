@@ -1,4 +1,4 @@
-package service;
+package service.io;
 
 import model.Maze;
 

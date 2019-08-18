@@ -1,9 +1,9 @@
-package service.impl;
+package service.build.impl;
 
 import model.Maze;
-import service.MazeBuilder;
-import service.MazeLoader;
-import service.MazeReader;
+import service.build.MazeBuilder;
+import service.build.MazeLoader;
+import service.io.MazeReader;
 
 import java.nio.file.Paths;
 

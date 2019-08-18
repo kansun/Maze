@@ -1,10 +1,10 @@
-package service.impl;
+package service.io.impl;
 
 import model.Maze;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import service.MazeWriter;
+import service.io.MazeWriter;
 import util.TestResourcePool;
 
 import java.io.ByteArrayOutputStream;
