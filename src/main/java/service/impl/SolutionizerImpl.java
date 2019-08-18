@@ -3,7 +3,7 @@ package service.impl;
 import model.Direction;
 import model.Location;
 import model.Maze;
-import model.SquareType;
+import model.Square;
 import service.Solutionizer;
 
 import java.util.Collection;
@@ -13,7 +13,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-import static model.SquareType.WALL;
+import static model.Square.WALL;
 
 public class SolutionizerImpl implements Solutionizer {
 
@@ -21,12 +21,12 @@ public class SolutionizerImpl implements Solutionizer {
     public Collection<Location> solve(Maze input) {
         Set<Location> visitHistory = new HashSet<>();
         Queue<Location> visitPlan = new LinkedList<>();
-        visitPlan.offer(input.getStart().getLocation());
-        Location endLocation = input.getEnd().getLocation();
+        visitPlan.offer(input.getStart());
+        Location endLocation = input.getEnd();
 
         while (!visitPlan.isEmpty()) {
             Location current = visitPlan.poll();
-            SquareType currentType = input.locateSquare(current).getType();
+            Square currentType = input.locateSquare(current);
 
             if (WALL == currentType || visitHistory.contains(current)) {
                 continue;
@@ -39,7 +39,7 @@ public class SolutionizerImpl implements Solutionizer {
             visitHistory.add(current);
             for (Direction direction : Direction.values()) {
                 Location neighbourLocation = current.locateNeighbour(direction);
-                if (WALL != input.locateSquare(neighbourLocation).getType() && !visitHistory.contains(neighbourLocation)) {
+                if (WALL != input.locateSquare(neighbourLocation) && !visitHistory.contains(neighbourLocation)) {
                     visitPlan.offer(neighbourLocation);
                 }
             }

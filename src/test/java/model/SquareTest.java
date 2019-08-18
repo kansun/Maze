@@ -1,85 +1,82 @@
 package model;
 
-import org.hamcrest.Matchers;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-
-import static model.SquareType.END;
-import static model.SquareType.MARKED;
-import static model.SquareType.SPACE;
-import static model.SquareType.START;
-import static model.SquareType.WALL;
+import static model.Square.END;
+import static model.Square.MARKED;
+import static model.Square.SPACE;
+import static model.Square.START;
+import static model.Square.WALL;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class SquareTest {
 
+    private static final char WALL_CHAR = '#';
+    private static final char SPACE_CHAR = ' ';
+    private static final char START_CHAR = 'S';
+    private static final char END_CHAR = 'E';
+    private static final char MARKED_CHAR = '.';
+
     @Test
-    public void shouldMarkSquareChangeTypeOnly() {
-        //given
-        Square unmarked = givenSquare(3, 4, SPACE);
-
-        //when
-        Square marked = mark(unmarked);
-
-        //then
-        assertThat(marked.getType(), equalTo(MARKED));
-        assertThat(marked.isVisited(), equalTo(false));
-        assertThat(marked.getLocation().getRow(), equalTo(unmarked.getLocation().getRow()));
-        assertThat(marked.getLocation().getCol(), equalTo(unmarked.getLocation().getCol()));
+    public void shouldWallCarryLabel_Hash() {
+        assertThat(WALL.getLabel(), equalTo(WALL_CHAR));
     }
 
     @Test
-    public void shouldVisitSquareChangeVisitedFlagOnly() {
-        //given
-        Square unvisited = givenSquare(3, 4, SPACE);
-
-        //when
-        Square visited = visit(unvisited);
-
-        //then
-        assertThat(visited.isVisited(), equalTo(true));
-        assertThat(visited.getType(), equalTo(SPACE));
-        assertThat(visited.getLocation().getRow(), equalTo(unvisited.getLocation().getRow()));
-        assertThat(visited.getLocation().getCol(), equalTo(unvisited.getLocation().getCol()));
+    public void shouldSpaceCarryLabel_Space() {
+        assertThat(SPACE.getLabel(), equalTo(SPACE_CHAR));
     }
 
     @Test
-    public void testEquality() {
-        //given
-        Square wall1 = givenSquare(0, 0, WALL);
-        Square wall2 = givenSquare(0, 1, WALL);
-        Square cell1 = givenSquare(1, 1, SPACE);
-        Square cell2 = givenSquare(1, 2, SPACE);
-        Square start = givenSquare(2, 2, START);
-        Square end = givenSquare(2, 2, END);
-        Square duplicateEnd = givenSquare(2, 2, END);
-        Collection<Square> withDuplidate = Arrays.asList(wall1, wall2, cell1, cell2, start, end, duplicateEnd);
-        Collection<Square> withoutDuplicate = Arrays.asList(wall1, wall2, cell1, cell2, start, end);
-
-        //when
-        Set<Square> target = new HashSet<>(withDuplidate);
-
-        //then
-        assertThat(target, hasSize(withoutDuplicate.size()));
-        assertThat(target, Matchers.containsInAnyOrder(withoutDuplicate.toArray()));
+    public void shouldStartCarryLabel_S() {
+        assertThat(START.getLabel(), equalTo(START_CHAR));
     }
 
-    private Square givenSquare(int row, int col, SquareType type) {
-        return Square.newBuilder().withLocation(new Location(row, col, null)).withType(type).withVisited(false).build();
+    @Test
+    public void shouldEndCarryLabel_E() {
+        assertThat(END.getLabel(), equalTo(END_CHAR));
     }
 
-    private Square mark(Square unvisited) {
-        return Square.newBuilder(unvisited).withType(MARKED).build();
+    @Test
+    public void shouldMarkedCarryLabel_Dot() {
+        assertThat(MARKED.getLabel(), equalTo(MARKED_CHAR));
     }
 
-    private Square visit(Square visited) {
-        return Square.newBuilder(visited).withVisited(true).build();
+    @Test
+    public void shouldCreateWallFromLabel_Hash() {
+        Square actual = Square.fromLabel(WALL_CHAR);
+        assertThat(actual, equalTo(WALL));
     }
+
+    @Test
+    public void shouldCreateStartFromLabel_S() {
+        Square actual = Square.fromLabel(START_CHAR);
+        assertThat(actual, equalTo(START));
+    }
+
+    @Test
+    public void shouldCreateEndFromLabel_E() {
+        Square actual = Square.fromLabel(END_CHAR);
+        assertThat(actual, equalTo(END));
+    }
+
+    @Test
+    public void shouldCreateSpaceFromLabel_Space() {
+        Square actual = Square.fromLabel(SPACE_CHAR);
+        assertThat(actual, equalTo(SPACE));
+    }
+
+    @Test
+    public void shouldCreateMarkedFromLabel_Space() {
+        Square actual = Square.fromLabel(MARKED_CHAR);
+        assertThat(actual, equalTo(MARKED));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowIllegalArgumentExceptionOnUnknownChar() {
+        Square.fromLabel('a');
+    }
+
 
 }

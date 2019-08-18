@@ -5,31 +5,31 @@ import java.util.Objects;
 
 import static java.util.Collections.emptyMap;
 import static java.util.Collections.unmodifiableMap;
-import static model.SquareType.END;
-import static model.SquareType.START;
+import static model.Square.END;
+import static model.Square.START;
 
 public final class Maze {
 
-    private Square start;
-    private Square end;
+    private Location start;
+    private Location end;
     private final Map<Location, Square> squares;
 
     public Maze(Map<Location, Square> squares) {
         this.squares = null == squares ? emptyMap() : unmodifiableMap(squares);
-        this.squares.values().forEach(square -> {
-            if (START == square.getType()) {
-                start = square;
-            } else if (END == square.getType()) {
-                end = square;
+        this.squares.forEach((key, value) -> {
+            if (START == value) {
+                start = key;
+            } else if (END == value) {
+                end = key;
             }
         });
     }
 
-    public Square getStart() {
+    public Location getStart() {
         return start;
     }
 
-    public Square getEnd() {
+    public Location getEnd() {
         return end;
     }
 

@@ -3,7 +3,6 @@ package service.impl;
 import model.Location;
 import model.Maze;
 import model.Square;
-import model.SquareType;
 import org.junit.Before;
 import org.junit.Test;
 import service.Solutionizer;
@@ -24,10 +23,10 @@ import static util.TestResourcePool.SINGLE_ROW_MAZE_2;
 
 public class SolutionizerImplTest {
 
-    private static final Collection<SquareType> RESULT_TYPES = new HashSet<SquareType>() {{
-        add(SquareType.MARKED);
-        add(SquareType.START);
-        add(SquareType.END);
+    private static final Collection<Square> RESULT_TYPES = new HashSet<Square>() {{
+        add(Square.MARKED);
+        add(Square.START);
+        add(Square.END);
     }};
     private Solutionizer target;
 
@@ -45,13 +44,13 @@ public class SolutionizerImplTest {
          * #SE#
          * ####
          * */
-        Maze input = SINGLE_ROW_MAZE_0.getUnresolved();
+        Maze input = SINGLE_ROW_MAZE_0.given();
 
         //when
         Collection<Location> actual = target.solve(input);
 
         //Then
-        List<Location> expects = getLocations(SINGLE_ROW_MAZE_0.getSolved().getSquares());
+        List<Location> expects = getLocations(SINGLE_ROW_MAZE_0.expect().getSquares());
         assertThat(actual, containsInAnyOrder(expects.toArray()));
     }
 
@@ -64,13 +63,13 @@ public class SolutionizerImplTest {
          * #S E#
          * #####
          * */
-        Maze input = SINGLE_ROW_MAZE_1.getUnresolved();
+        Maze input = SINGLE_ROW_MAZE_1.given();
 
         //when
         Collection<Location> actual = target.solve(input);
 
         //Then
-        List<Location> expects = getLocations(SINGLE_ROW_MAZE_1.getSolved().getSquares());
+        List<Location> expects = getLocations(SINGLE_ROW_MAZE_1.expect().getSquares());
         assertThat(actual, containsInAnyOrder(expects.toArray()));
     }
 
@@ -83,13 +82,13 @@ public class SolutionizerImplTest {
          * #S  E#
          * ######
          * */
-        Maze input = SINGLE_ROW_MAZE_2.getUnresolved();
+        Maze input = SINGLE_ROW_MAZE_2.given();
 
         //when
         Collection<Location> actual = target.solve(input);
 
         //Then
-        List<Location> expects = getLocations(SINGLE_ROW_MAZE_2.getSolved().getSquares());
+        List<Location> expects = getLocations(SINGLE_ROW_MAZE_2.expect().getSquares());
         assertThat(actual, containsInAnyOrder(expects.toArray()));
     }
 
@@ -103,13 +102,13 @@ public class SolutionizerImplTest {
          * #S##
          * ####
          * */
-        Maze input = DIAGONAL_MAZE_2.getUnresolved();
+        Maze input = DIAGONAL_MAZE_2.given();
 
         //when
         Collection<Location> actual = target.solve(input);
 
         //Then
-        List<Location> expects = getLocations(DIAGONAL_MAZE_2.getSolved().getSquares());
+        List<Location> expects = getLocations(DIAGONAL_MAZE_2.expect().getSquares());
         assertThat(actual, containsInAnyOrder(expects.toArray()));
     }
 
@@ -126,18 +125,18 @@ public class SolutionizerImplTest {
          * #S  # #
          * #######
          * */
-        Maze input = COMPLEX_ROW_MAZE.getUnresolved();
+        Maze input = COMPLEX_ROW_MAZE.given();
 
         //when
         Collection<Location> actual = target.solve(input);
 
         //Then
-        List<Location> expects = getLocations(COMPLEX_ROW_MAZE.getSolved().getSquares());
+        List<Location> expects = getLocations(COMPLEX_ROW_MAZE.expect().getSquares());
         assertThat(actual, containsInAnyOrder(expects.toArray()));
     }
 
     private List<Location> getLocations(Map<Location, Square> squares) {
-        return squares.entrySet().stream().filter(e -> RESULT_TYPES.contains(e.getValue().getType())).map(Map.Entry::getKey).collect(toList());
+        return squares.entrySet().stream().filter(e -> RESULT_TYPES.contains(e.getValue())).map(Map.Entry::getKey).collect(toList());
     }
 
 }

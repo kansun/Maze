@@ -31,13 +31,13 @@ public class MazeSolverImplTest {
          * #SE#
          * ####
          * */
-        Maze input = SINGLE_ROW_MAZE_0.getUnresolved();
+        Maze input = SINGLE_ROW_MAZE_0.given();
 
         //when
         Maze actual = target.solve(input);
 
         //Then
-        assertThat(actual, equalTo(SINGLE_ROW_MAZE_0.getSolved()));
+        assertThat(actual, equalTo(SINGLE_ROW_MAZE_0.expect()));
     }
 
     @Test
@@ -49,13 +49,13 @@ public class MazeSolverImplTest {
          * #S E#
          * #####
          * */
-        Maze input = SINGLE_ROW_MAZE_1.getUnresolved();
+        Maze input = SINGLE_ROW_MAZE_1.given();
 
         //when
         Maze actual = target.solve(input);
 
         //Then
-        assertThat(actual, equalTo(SINGLE_ROW_MAZE_1.getSolved()));
+        assertThat(actual, equalTo(SINGLE_ROW_MAZE_1.expect()));
     }
 
     @Test
@@ -67,13 +67,13 @@ public class MazeSolverImplTest {
          * #S  E#
          * ######
          * */
-        Maze input = SINGLE_ROW_MAZE_2.getUnresolved();
+        Maze input = SINGLE_ROW_MAZE_2.given();
 
         //when
         Maze actual = target.solve(input);
 
         //Then
-        assertThat(actual, equalTo(SINGLE_ROW_MAZE_2.getSolved()));
+        assertThat(actual, equalTo(SINGLE_ROW_MAZE_2.expect()));
     }
 
     @Test
@@ -86,13 +86,13 @@ public class MazeSolverImplTest {
          * #S##
          * ####
          * */
-        Maze input = DIAGONAL_MAZE_2.getUnresolved();
+        Maze input = DIAGONAL_MAZE_2.given();
 
         //when
         Maze actual = target.solve(input);
 
         //Then
-        assertThat(actual, equalTo(DIAGONAL_MAZE_2.getSolved()));
+        assertThat(actual, equalTo(DIAGONAL_MAZE_2.expect()));
     }
 
     @Test
@@ -108,13 +108,13 @@ public class MazeSolverImplTest {
          * #S  # #
          * #######
          * */
-        Maze input = COMPLEX_ROW_MAZE.getUnresolved();
+        Maze input = COMPLEX_ROW_MAZE.given();
 
         //when
         Maze actual = target.solve(input);
 
         //Then
-        Maze expected = COMPLEX_ROW_MAZE.getSolved();
+        Maze expected = COMPLEX_ROW_MAZE.expect();
         assertThat(actual, equalTo(expected));
     }
 

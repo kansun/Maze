@@ -8,7 +8,7 @@ import service.MazeBuilder;
 import java.util.HashMap;
 import java.util.Map;
 
-import static model.SquareType.fromLabel;
+import static model.Square.fromLabel;
 
 public class MazeBuilderImpl implements MazeBuilder {
 
@@ -19,11 +19,7 @@ public class MazeBuilderImpl implements MazeBuilder {
             for (int col = 0; col < input[row].length; col++) {
                 char label = input[row][col];
                 Location location = new Location(row, col);
-                Square square = Square.newBuilder()
-                        .withLocation(location)
-                        .withType(fromLabel(label))
-                        .build();
-                squares.put(location, square);
+                squares.put(location, fromLabel(label));
             }
         }
         return new Maze(squares);

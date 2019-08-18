@@ -38,7 +38,7 @@ public class MazeBuilderImplTest {
         Maze actual = target.build(input);
 
         //then
-        Maze expected = SINGLE_ROW_MAZE_2.getUnresolved();
+        Maze expected = SINGLE_ROW_MAZE_2.given();
         assertThat(actual, equalTo(expected));
     }
 
@@ -69,7 +69,7 @@ public class MazeBuilderImplTest {
         Maze actual = target.build(input);
 
         //then
-        Maze expected = COMPLEX_ROW_MAZE.getUnresolved();
+        Maze expected = COMPLEX_ROW_MAZE.given();
         assertThat(actual, equalTo(expected));
     }
 

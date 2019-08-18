@@ -1,99 +1,30 @@
 package model;
 
-import java.util.Objects;
+import java.util.Arrays;
+import java.util.Optional;
 
-public final class Square {
+import static java.lang.String.format;
 
-    private final Location location;
-    private final SquareType type;
-    private final boolean visited;
+public enum Square {
 
-    private Square(Builder builder) {
-        location = builder.location;
-        type = builder.type;
-        visited = builder.visited;
+    WALL('#'),
+    SPACE(' '),
+    START('S'),
+    END('E'),
+    MARKED('.');
+
+    private final char label;
+
+    Square(char label) {
+        this.label = label;
     }
 
-    public static Builder newBuilder() {
-        return new Builder();
+    public static Square fromLabel(char c) {
+        Optional<Square> match = Arrays.stream(values()).filter(t -> t.getLabel() == c).findFirst();
+        return match.orElseThrow(() -> new IllegalArgumentException(format("Encountered an invalid character '%c'.", c)));
     }
 
-    public static Builder newBuilder(Square copy) {
-        Builder builder = new Builder();
-        builder.location = copy.getLocation();
-        builder.type = copy.getType();
-        builder.visited = copy.isVisited();
-        return builder;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public SquareType getType() {
-        return type;
-    }
-
-    public boolean isVisited() {
-        return visited;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Square square = (Square) o;
-        return null != getLocation() && getLocation().equals(square.getLocation()) &&
-                getType() == square.getType()
-                ;
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(getLocation(), getType());
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Square{");
-        sb.append("row=").append(location.getRow());
-        sb.append(", col=").append(location.getCol());
-        sb.append(", type=").append(type);
-        sb.append(", visited=").append(visited);
-        sb.append('}');
-        return sb.toString();
-    }
-
-    public static final class Builder {
-        private Location location;
-        private SquareType type;
-        private boolean visited;
-
-        private Builder() {
-        }
-
-        public Builder withLocation(Location val) {
-            location = val;
-            return this;
-        }
-
-        public Builder withType(SquareType val) {
-            type = val;
-            return this;
-        }
-
-        public Builder withVisited(boolean val) {
-            visited = val;
-            return this;
-        }
-
-        public Square build() {
-            return new Square(this);
-        }
+    public char getLabel() {
+        return label;
     }
 }

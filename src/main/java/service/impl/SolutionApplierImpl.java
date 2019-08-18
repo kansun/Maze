@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import static model.SquareType.MARKED;
+import static model.Square.MARKED;
 
 public class SolutionApplierImpl implements SolutionApplier {
 
@@ -19,13 +19,10 @@ public class SolutionApplierImpl implements SolutionApplier {
         solution.forEach(move ->
                 squares.replaceAll((k, v) -> {
                     if (k.equals(move)) {
-                        if (k.equals(target.getStart().getLocation())) {
-                            return target.getStart();
+                        if (k.equals(target.getStart()) || k.equals(target.getEnd())) {
+                            return v;
                         }
-                        if (k.equals(target.getEnd().getLocation())) {
-                            return target.getEnd();
-                        }
-                        return Square.newBuilder().withLocation(k).withType(MARKED).build();
+                        return MARKED;
                     } else {
                         return v;
                     }
