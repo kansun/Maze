@@ -53,4 +53,5 @@ public final class TestConstants {
     public static final Location LOCATION_64 = new Location(6, 4);
     public static final Location LOCATION_65 = new Location(6, 5);
     public static final Location LOCATION_66 = new Location(6, 6);
+    public static final String TEST_RESOURCES_INPUT = "src/test/resources/input/";
 }

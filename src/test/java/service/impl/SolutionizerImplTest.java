@@ -37,7 +37,7 @@ public class SolutionizerImplTest {
 
     @Test
     public void testSolveSingleRowMaze_0() {
-        //given
+        //Given
         /*
          * A single row maze like
          * ####
@@ -46,7 +46,7 @@ public class SolutionizerImplTest {
          * */
         Maze input = SINGLE_ROW_MAZE_0.given();
 
-        //when
+        //When
         Collection<Location> actual = target.solve(input);
 
         //Then
@@ -56,7 +56,7 @@ public class SolutionizerImplTest {
 
     @Test
     public void testSolveSingleRowMaze_1() {
-        //given
+        //Given
         /*
          * A single row maze like
          * #####
@@ -65,7 +65,7 @@ public class SolutionizerImplTest {
          * */
         Maze input = SINGLE_ROW_MAZE_1.given();
 
-        //when
+        //When
         Collection<Location> actual = target.solve(input);
 
         //Then
@@ -75,7 +75,7 @@ public class SolutionizerImplTest {
 
     @Test
     public void testSolveSingleRowMaze_2() {
-        //given
+        //Given
         /*
          * A single row maze like
          * ######
@@ -84,7 +84,7 @@ public class SolutionizerImplTest {
          * */
         Maze input = SINGLE_ROW_MAZE_2.given();
 
-        //when
+        //When
         Collection<Location> actual = target.solve(input);
 
         //Then
@@ -94,7 +94,7 @@ public class SolutionizerImplTest {
 
     @Test
     public void testSolveDiagonalMaze_1() {
-        //given
+        //Given
         /*
          * A single row maze like
          * ####
@@ -104,7 +104,7 @@ public class SolutionizerImplTest {
          * */
         Maze input = DIAGONAL_MAZE_2.given();
 
-        //when
+        //When
         Collection<Location> actual = target.solve(input);
 
         //Then
@@ -114,7 +114,7 @@ public class SolutionizerImplTest {
 
     @Test
     public void testSolveComplexMaze() {
-        //given
+        //Given
         /*
          * A single row maze like
          * #######
@@ -127,7 +127,7 @@ public class SolutionizerImplTest {
          * */
         Maze input = COMPLEX_ROW_MAZE.given();
 
-        //when
+        //When
         Collection<Location> actual = target.solve(input);
 
         //Then

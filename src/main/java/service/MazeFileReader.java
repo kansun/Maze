@@ -1,10 +1,8 @@
 package service;
 
-import model.Maze;
-
-import java.io.File;
+import java.nio.file.Path;
 
 public interface MazeFileReader {
 
-    Maze read(File file);
+    char[][] read(Path file);
 }

@@ -21,7 +21,7 @@ public class MazeBuilderImplTest {
 
     @Test
     public void shouldBuildSingleRowMazeFrom2DArrayInput() {
-        //given
+        //Given
         /*
          * A single row maze like
          * ######
@@ -34,17 +34,17 @@ public class MazeBuilderImplTest {
                 {'#', '#', '#', '#', '#', '#'}
         };
 
-        //when
+        //When
         Maze actual = target.build(input);
 
-        //then
+        //Then
         Maze expected = SINGLE_ROW_MAZE_2.given();
         assertThat(actual, equalTo(expected));
     }
 
     @Test
     public void shouldBuildMazeFrom2DArrayInput() {
-        //given
+        //Given
         /*
          * A single row maze like
          * #######
@@ -65,10 +65,10 @@ public class MazeBuilderImplTest {
                 {'#', '#', '#', '#', '#', '#', '#'}
         };
 
-        //when
+        //When
         Maze actual = target.build(input);
 
-        //then
+        //Then
         Maze expected = COMPLEX_ROW_MAZE.given();
         assertThat(actual, equalTo(expected));
     }

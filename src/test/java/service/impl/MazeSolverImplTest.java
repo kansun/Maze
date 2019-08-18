@@ -24,7 +24,7 @@ public class MazeSolverImplTest {
 
     @Test
     public void testSolveSingleRowMaze_0() {
-        //given
+        //Given
         /*
          * A single row maze like
          * ####
@@ -33,7 +33,7 @@ public class MazeSolverImplTest {
          * */
         Maze input = SINGLE_ROW_MAZE_0.given();
 
-        //when
+        //When
         Maze actual = target.solve(input);
 
         //Then
@@ -42,7 +42,7 @@ public class MazeSolverImplTest {
 
     @Test
     public void testSolveSingleRowMaze_1() {
-        //given
+        //Given
         /*
          * A single row maze like
          * #####
@@ -51,7 +51,7 @@ public class MazeSolverImplTest {
          * */
         Maze input = SINGLE_ROW_MAZE_1.given();
 
-        //when
+        //When
         Maze actual = target.solve(input);
 
         //Then
@@ -60,7 +60,7 @@ public class MazeSolverImplTest {
 
     @Test
     public void testSolveSingleRowMaze_2() {
-        //given
+        //Given
         /*
          * A single row maze like
          * ######
@@ -69,7 +69,7 @@ public class MazeSolverImplTest {
          * */
         Maze input = SINGLE_ROW_MAZE_2.given();
 
-        //when
+        //When
         Maze actual = target.solve(input);
 
         //Then
@@ -78,7 +78,7 @@ public class MazeSolverImplTest {
 
     @Test
     public void testSolveDiagonalMaze_1() {
-        //given
+        //Given
         /*
          * A single row maze like
          * ####
@@ -88,7 +88,7 @@ public class MazeSolverImplTest {
          * */
         Maze input = DIAGONAL_MAZE_2.given();
 
-        //when
+        //When
         Maze actual = target.solve(input);
 
         //Then
@@ -97,7 +97,7 @@ public class MazeSolverImplTest {
 
     @Test
     public void testSolveComplexMaze() {
-        //given
+        //Given
         /*
          * A single row maze like
          * #######
@@ -110,7 +110,7 @@ public class MazeSolverImplTest {
          * */
         Maze input = COMPLEX_ROW_MAZE.given();
 
-        //when
+        //When
         Maze actual = target.solve(input);
 
         //Then
