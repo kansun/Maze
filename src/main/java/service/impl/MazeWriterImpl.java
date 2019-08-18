@@ -13,7 +13,7 @@ public class MazeWriterImpl implements MazeWriter {
     public void write(Maze maze) {
         Map<Location, Square> map = maze.getSquares();
         StringBuilder sb = new StringBuilder();
-        char[][] chars = new char[maze.getWidth()][maze.getHeight()];
+        char[][] chars = new char[maze.getHeight()][maze.getWidth()];
         map.entrySet().stream().forEach(e -> {
             Location loc = e.getKey();
             int row = loc.getRow();

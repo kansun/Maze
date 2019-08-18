@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.UUID;
 
 
 public class MazeReaderImpl implements MazeReader {
@@ -31,7 +32,9 @@ public class MazeReaderImpl implements MazeReader {
             }
             return output;
         } catch (IOException e) {
-            throw new FileReaderException(e);
+            UUID errorId = UUID.randomUUID();
+            String message = "An I/O error has been encountered when reading the maze from the input file. ";
+            throw new FileReaderException(errorId, message, e);
         }
     }
 }

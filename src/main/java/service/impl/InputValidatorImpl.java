@@ -1,53 +1,52 @@
 package service.impl;
 
-import model.ApplicationError;
+import exception.ApplicationException;
+import exception.DataValidationException;
 import model.Square;
-import service.ApplicationErrorHandler;
 import service.InputValidator;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.UUID;
 
+import static exception.ApplicationException.MESSAGE_ILLEGAL_CHARS_TEMPLATE;
+import static exception.ApplicationException.MESSAGE_INCONSISTENT_WIDTHS;
+import static java.lang.String.format;
 import static java.util.Arrays.stream;
-import static service.ApplicationErrorHandler.MESSAGE_ILLEGAL_CHARS;
-import static service.ApplicationErrorHandler.MESSAGE_INCONSISTENT_WIDTH;
 
 public class InputValidatorImpl implements InputValidator {
-
-    private final ApplicationErrorHandler applicationErrorHandler;
-
-    public InputValidatorImpl(ApplicationErrorHandler applicationErrorHandler) {
-        this.applicationErrorHandler = applicationErrorHandler;
-    }
 
     @Override
     public void validate(Collection<String> lines) {
         Set<Integer> width = new HashSet<>();
-        Collection<ApplicationError> errors = new LinkedHashSet<>();
+        Collection<ApplicationException> errors = new LinkedHashSet<>();
         lines.forEach(line -> {
                     char[] lineChars = line.toCharArray();
                     width.add(line.length());
-                    if (containsInvalidChars(lineChars)) {
-                        errors.add(new ApplicationError(MESSAGE_ILLEGAL_CHARS));
-                    }
-                }
-        );
+            String invalidChars;
+            if ((invalidChars = checkChars(lineChars)).length() > 0) {
+                UUID errorId = UUID.randomUUID();
+                throw new DataValidationException(errorId, format(MESSAGE_ILLEGAL_CHARS_TEMPLATE, invalidChars));
+            }
+
+        });
         if (width.size() > 1) {
-            errors.add(new ApplicationError(MESSAGE_INCONSISTENT_WIDTH));
+            UUID errorId = UUID.randomUUID();
+            throw new DataValidationException(errorId, MESSAGE_INCONSISTENT_WIDTHS);
         }
-        applicationErrorHandler.handleErrors(errors);
     }
 
-    private boolean containsInvalidChars(char[] target) {
+    private String checkChars(char[] target) {
         Square[] squares = Square.values();
+        String invalidChars = "";
         for (char c : target) {
             boolean invalid = stream(squares).noneMatch(s -> s.getLabel() == c);
             if (invalid) {
-                return true;
+                invalidChars += (invalidChars.length() > 0 ? ", " : "") + "'" + c + "'";
             }
         }
-        return false;
+        return invalidChars;
     }
 }

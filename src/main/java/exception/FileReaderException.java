@@ -1,8 +1,10 @@
 package exception;
 
-public class FileReaderException extends RuntimeException {
+import java.util.UUID;
 
-    public FileReaderException(Throwable e) {
-        super(e);
+public class FileReaderException extends ApplicationException {
+
+    public FileReaderException(UUID errorId, String message, Throwable throwable) {
+        super(errorId, message, throwable);
     }
 }

@@ -1,9 +1,12 @@
 import context.ApplicationContext;
+import exception.ApplicationException;
 import model.Maze;
+import service.GlobalExceptionHandler;
 import service.MazeLoader;
 import service.MazeSolver;
 import service.MazeWriter;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -11,6 +14,7 @@ public class Main {
     static MazeLoader loader;
     static MazeSolver solver;
     static MazeWriter writer;
+    static GlobalExceptionHandler exceptionHandler;
 
     public static void main(String[] args) {
         initialize();
@@ -32,14 +36,20 @@ public class Main {
         loader = context.getLoader();
         solver = context.getSolver();
         writer = context.getWriter();
+        exceptionHandler = context.getExceptionHandler();
     }
 
     private static void start(String inputPath) {
-        Maze input = loader.load(inputPath);
-        System.out.println("The input is: ");
-        writer.write(input);
-        Maze solution = solver.solve(input);
-        System.out.println("The solution is: ");
-        writer.write(solution);
+        try {
+            Maze input = loader.load(inputPath);
+            System.out.println("The input is: ");
+            writer.write(input);
+            System.out.println("----------------------------------------------");
+            Maze solution = solver.solve(input);
+            System.out.println("The solution is: ");
+            writer.write(solution);
+        } catch (ApplicationException e) {
+            exceptionHandler.handle(Arrays.asList(e));
+        }
     }
 }

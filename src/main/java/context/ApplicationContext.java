@@ -1,13 +1,13 @@
 package context;
 
-import service.ApplicationErrorHandler;
+import service.GlobalExceptionHandler;
 import service.InputValidator;
 import service.MazeBuilder;
 import service.MazeLoader;
 import service.MazeReader;
 import service.MazeSolver;
 import service.MazeWriter;
-import service.impl.ErrorHandlerImpl;
+import service.impl.ExceptionHandlerImpl;
 import service.impl.InputValidatorImpl;
 import service.impl.MazeBuilderImpl;
 import service.impl.MazeLoaderImpl;
@@ -22,14 +22,15 @@ public final class ApplicationContext {
     private final MazeLoader loader;
     private final MazeSolver solver;
     private final MazeWriter writer;
+    private final GlobalExceptionHandler exceptionHandler;
 
     private static ApplicationContext instance;
 
     private ApplicationContext() {
-        ApplicationErrorHandler errorHandler = new ErrorHandlerImpl();
-        InputValidator validator = new InputValidatorImpl(errorHandler);
+        InputValidator validator = new InputValidatorImpl();
         MazeReader reader = new MazeReaderImpl(validator);
         MazeBuilder builder = new MazeBuilderImpl();
+        exceptionHandler = new ExceptionHandlerImpl();
         loader = new MazeLoaderImpl(reader, builder);
         solver = new MazeSolverImpl(new SolutionizerImpl(), new SolutionApplierImpl());
         writer = new MazeWriterImpl();
@@ -56,5 +57,9 @@ public final class ApplicationContext {
 
     public MazeWriter getWriter() {
         return writer;
+    }
+
+    public GlobalExceptionHandler getExceptionHandler() {
+        return exceptionHandler;
     }
 }

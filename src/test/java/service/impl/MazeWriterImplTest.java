@@ -26,7 +26,6 @@ public class MazeWriterImplTest {
     @After
     public void tearDown() {
         System.setOut(System.out);
-
     }
 
     @Test
