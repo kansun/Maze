@@ -1,11 +1,11 @@
 package maze.service.impl;
 
 import maze.exception.DataValidationException;
+import maze.service.InputValidator;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import maze.service.InputValidator;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,9 +14,10 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import static maze.exception.ApplicationException.MESSAGE_ILLEGAL_CHARS_TEMPLATE;
+import static maze.exception.ApplicationException.MESSAGE_ILLEGAL_WALL_CHARS_TEMPLATE;
 import static maze.exception.ApplicationException.MESSAGE_INCONSISTENT_WIDTHS;
-import static org.hamcrest.Matchers.endsWith;
 import static maze.util.TestConstants.TEST_RESOURCES_INPUT;
+import static org.hamcrest.Matchers.endsWith;
 
 public class InputValidatorImplTest {
 
@@ -35,6 +36,28 @@ public class InputValidatorImplTest {
         exceptionAssert.expectMessage(endsWith(MESSAGE_INCONSISTENT_WIDTHS));
         //Given
         List<String> given = loadTestResource("INCONSISTENT_ROWS.txt");
+
+        //When
+        target.validate(given);
+    }
+
+    @Test
+    public void shouldThrowDataValidationExceptionWhenHorizontalWallContainsInvalidChars() throws IOException {
+        exceptionAssert.expect(DataValidationException.class);
+        exceptionAssert.expectMessage(endsWith(String.format(MESSAGE_ILLEGAL_WALL_CHARS_TEMPLATE, "' '")));
+        //Given
+        List<String> given = loadTestResource("ILLEGAL_H_WALL_CHARS.txt");
+
+        //When
+        target.validate(given);
+    }
+
+    @Test
+    public void shouldThrowDataValidationExceptionWhenVerticalWallContainsInvalidChars() throws IOException {
+        exceptionAssert.expect(DataValidationException.class);
+        exceptionAssert.expectMessage(endsWith(String.format(MESSAGE_ILLEGAL_WALL_CHARS_TEMPLATE, "'.'")));
+        //Given
+        List<String> given = loadTestResource("ILLEGAL_V_WALL_CHARS.txt");
 
         //When
         target.validate(given);

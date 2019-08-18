@@ -22,9 +22,9 @@ public class Main {
         initialize();
         String inputPath = null;
         if (args.length == 0) {
+            Scanner in = new Scanner(System.in);
             while (inputPath == null || inputPath.isEmpty()) {
-                System.out.println("Please provide the absolute path to the maze input file: ");
-                Scanner in = new Scanner(System.in);
+                System.out.println("Please provide the path to the maze input file: ");
                 inputPath = in.nextLine();
             }
         } else {

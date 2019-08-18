@@ -6,6 +6,7 @@ import maze.model.Maze;
 import maze.model.Square;
 import maze.service.solution.Solutionizer;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -37,12 +38,12 @@ public class SolutionizerImpl implements Solutionizer {
             }
 
             visitHistory.add(current);
-            for (Direction direction : Direction.values()) {
+            Arrays.stream(Direction.values()).forEach(direction -> {
                 Location neighbourLocation = current.locateNeighbour(direction);
                 if (WALL != input.locateSquare(neighbourLocation) && !visitHistory.contains(neighbourLocation)) {
                     visitPlan.offer(neighbourLocation);
                 }
-            }
+            });
         }
         return Collections.emptySet();
     }
