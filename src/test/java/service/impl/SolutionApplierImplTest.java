@@ -43,7 +43,7 @@ public class SolutionApplierImplTest {
         Collection<Location> solution = Arrays.asList(loc1, loc2, loc4);
 
         //When
-        Map<Location, Square> actual = target.apply(new Maze(source), solution).getSquares();
+        Map<Location, Square> actual = target.apply(new Maze(source, 1, 6), solution).getSquares();
 
         //Then
         assertThat(actual.get(loc0), equalTo(WALL));

@@ -6,7 +6,7 @@ import model.Square;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import service.MazeFileReader;
+import service.MazeReader;
 import util.TestResourcePool;
 
 import java.io.IOException;
@@ -21,9 +21,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.isA;
 import static util.TestConstants.TEST_RESOURCES_INPUT;
 
-public class MazeFileReaderImplTest {
+public class MazeReaderImplTest {
 
-    private final MazeFileReader target = new MazeFileReaderImpl(lines -> {
+    private final MazeReader target = new MazeReaderImpl(lines -> {
     });
 
     @Rule

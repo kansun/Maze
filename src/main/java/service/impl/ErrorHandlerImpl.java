@@ -9,6 +9,7 @@ public class ErrorHandlerImpl implements ApplicationErrorHandler {
 
     @Override
     public void handleErrors(Collection<ApplicationError> errors) {
-
+        errors.stream().forEach(e -> System.out.println(e.getMessage()));
+        System.exit(1);
     }
 }

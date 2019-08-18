@@ -27,6 +27,6 @@ public class SolutionApplierImpl implements SolutionApplier {
                         return v;
                     }
                 }));
-        return new Maze(squares);
+        return new Maze(squares, target.getWidth(), target.getHeight());
     }
 }

@@ -2,7 +2,7 @@ package service.impl;
 
 import exception.FileReaderException;
 import service.InputValidator;
-import service.MazeFileReader;
+import service.MazeReader;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,11 +10,11 @@ import java.nio.file.Path;
 import java.util.List;
 
 
-public class MazeFileReaderImpl implements MazeFileReader {
+public class MazeReaderImpl implements MazeReader {
 
     private final InputValidator validator;
 
-    public MazeFileReaderImpl(InputValidator validator) {
+    public MazeReaderImpl(InputValidator validator) {
         this.validator = validator;
     }
 

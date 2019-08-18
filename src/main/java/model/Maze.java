@@ -13,8 +13,10 @@ public final class Maze {
     private Location start;
     private Location end;
     private final Map<Location, Square> squares;
+    private final int width;
+    private final int height;
 
-    public Maze(Map<Location, Square> squares) {
+    public Maze(Map<Location, Square> squares, int width, int height) {
         this.squares = null == squares ? emptyMap() : unmodifiableMap(squares);
         this.squares.forEach((key, value) -> {
             if (START == value) {
@@ -23,6 +25,16 @@ public final class Maze {
                 end = key;
             }
         });
+        this.width = width;
+        this.height = height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     public Location getStart() {

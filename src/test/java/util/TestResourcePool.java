@@ -96,7 +96,7 @@ public enum TestResourcePool {
         map.put(LOCATION_22, WALL);
         map.put(LOCATION_23, WALL);
 
-        return new Maze(map);
+        return new Maze(map, 3, 4);
     }
 
     private static Maze thenExpectSolvedSingleRowMaze_0() {
@@ -117,7 +117,7 @@ public enum TestResourcePool {
         map.put(LOCATION_22, WALL);
         map.put(LOCATION_23, WALL);
 
-        return new Maze(map);
+        return new Maze(map, 3, 4);
     }
 
     private static Maze givenSingleRowMaze_1() {
@@ -140,7 +140,7 @@ public enum TestResourcePool {
         map.put(LOCATION_23, WALL);
         map.put(LOCATION_24, WALL);
 
-        return new Maze(map);
+        return new Maze(map, 3, 5);
     }
 
     private static Maze thenExpectSolvedSingleRowMaze_1() {
@@ -164,7 +164,7 @@ public enum TestResourcePool {
         map.put(LOCATION_23, WALL);
         map.put(LOCATION_24, WALL);
 
-        return new Maze(map);
+        return new Maze(map, 3, 5);
     }
 
     private static Maze givenSingleRowMaze_2() {
@@ -191,7 +191,7 @@ public enum TestResourcePool {
         map.put(LOCATION_24, WALL);
         map.put(LOCATION_25, WALL);
 
-        return new Maze(map);
+        return new Maze(map, 3, 6);
     }
 
     private static Maze thenExpectSolvedSingleRowMaze_2() {
@@ -218,7 +218,7 @@ public enum TestResourcePool {
         map.put(LOCATION_24, WALL);
         map.put(LOCATION_25, WALL);
 
-        return new Maze(map);
+        return new Maze(map, 3, 6);
     }
 
     private static Maze givenDiagonalMaze_1() {
@@ -244,7 +244,7 @@ public enum TestResourcePool {
         map.put(LOCATION_32, WALL);
         map.put(LOCATION_33, WALL);
 
-        return new Maze(map);
+        return new Maze(map, 4, 4);
     }
 
     private static Maze thenExpectSolvedDiagonalMaze_1() {
@@ -270,7 +270,7 @@ public enum TestResourcePool {
         map.put(LOCATION_32, WALL);
         map.put(LOCATION_33, WALL);
 
-        return new Maze(map);
+        return new Maze(map, 4, 4);
     }
 
     static Maze givenComplexMaze() {
@@ -331,7 +331,7 @@ public enum TestResourcePool {
         map.put(LOCATION_65, WALL);
         map.put(LOCATION_66, WALL);
 
-        return new Maze(map);
+        return new Maze(map, 7, 7);
     }
 
     /*
@@ -405,7 +405,7 @@ public enum TestResourcePool {
         map.put(LOCATION_65, WALL);
         map.put(LOCATION_66, WALL);
 
-        return new Maze(map);
+        return new Maze(map, 7, 7);
     }
 
     public Maze given() {
