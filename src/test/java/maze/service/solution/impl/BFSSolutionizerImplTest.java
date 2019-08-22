@@ -13,15 +13,15 @@ import java.util.List;
 import java.util.Map;
 
 import static java.util.stream.Collectors.toList;
-import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.junit.Assert.assertThat;
 import static maze.util.TestResourcePool.COMPLEX_ROW_MAZE;
 import static maze.util.TestResourcePool.DIAGONAL_MAZE_2;
 import static maze.util.TestResourcePool.SINGLE_ROW_MAZE_0;
 import static maze.util.TestResourcePool.SINGLE_ROW_MAZE_1;
 import static maze.util.TestResourcePool.SINGLE_ROW_MAZE_2;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.junit.Assert.assertThat;
 
-public class SolutionizerImplTest {
+public class BFSSolutionizerImplTest {
 
     private static final Collection<Square> RESULT_TYPES = new HashSet<Square>() {{
         add(Square.MARKED);
@@ -32,7 +32,7 @@ public class SolutionizerImplTest {
 
     @Before
     public void setUp() {
-        target = new SolutionizerImpl();
+        target = new BFSSolutionizerImpl();
     }
 
     @Test

@@ -13,9 +13,9 @@ import maze.service.io.MazeWriter;
 import maze.service.io.impl.MazeReaderImpl;
 import maze.service.io.impl.MazeWriterImpl;
 import maze.service.solution.MazeSolver;
+import maze.service.solution.impl.DFSSolutionizerImpl;
 import maze.service.solution.impl.MazeSolverImpl;
 import maze.service.solution.impl.SolutionApplierImpl;
-import maze.service.solution.impl.SolutionizerImpl;
 
 public final class ApplicationContext {
 
@@ -32,7 +32,8 @@ public final class ApplicationContext {
         MazeBuilder builder = new MazeBuilderImpl();
         exceptionHandler = new ExceptionHandlerImpl();
         loader = new MazeLoaderImpl(reader, builder);
-        solver = new MazeSolverImpl(new SolutionizerImpl(), new SolutionApplierImpl());
+//        solver = new MazeSolverImpl(new BFSSolutionizerImpl(), new SolutionApplierImpl());
+        solver = new MazeSolverImpl(new DFSSolutionizerImpl(), new SolutionApplierImpl());
         writer = new MazeWriterImpl();
     }
 

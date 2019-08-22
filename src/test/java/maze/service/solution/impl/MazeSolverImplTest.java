@@ -1,17 +1,17 @@
 package maze.service.solution.impl;
 
 import maze.model.Maze;
+import maze.service.solution.MazeSolver;
 import org.junit.Before;
 import org.junit.Test;
-import maze.service.solution.MazeSolver;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static maze.util.TestResourcePool.COMPLEX_ROW_MAZE;
 import static maze.util.TestResourcePool.DIAGONAL_MAZE_2;
 import static maze.util.TestResourcePool.SINGLE_ROW_MAZE_0;
 import static maze.util.TestResourcePool.SINGLE_ROW_MAZE_1;
 import static maze.util.TestResourcePool.SINGLE_ROW_MAZE_2;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class MazeSolverImplTest {
 
@@ -19,7 +19,7 @@ public class MazeSolverImplTest {
 
     @Before
     public void setUp() {
-        target = new MazeSolverImpl(new SolutionizerImpl(), new SolutionApplierImpl());
+        target = new MazeSolverImpl(new BFSSolutionizerImpl(), new SolutionApplierImpl());
     }
 
     @Test

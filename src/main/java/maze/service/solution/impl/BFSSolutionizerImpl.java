@@ -16,7 +16,7 @@ import java.util.Set;
 
 import static maze.model.Square.WALL;
 
-public class SolutionizerImpl implements Solutionizer {
+public class BFSSolutionizerImpl implements Solutionizer {
 
     @Override
     public Collection<Location> solve(Maze input) {
